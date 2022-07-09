@@ -1,7 +1,7 @@
 package solid;
 
 import java.util.ArrayList;
-import solid.dependency_inversion.DataAccessFactory;
+import solid.dependency_inversion.CustomerDataAccessFactory;
 import solid.interface_segregation.Asean;
 import solid.interface_segregation.Eagle;
 import solid.liskov_substitution.KMPlayer;
@@ -54,7 +54,7 @@ public class Main {
     eagle.sleep();
 
     //Dependency-Inversion
-    String customerName = DataAccessFactory.getInstanceOfCustomerDataAccess().getCustomerName(1);
+    String customerName = CustomerDataAccessFactory.getInstanceOfCustomerDataAccess().getCustomerName(1);
     System.out.println(customerName);
   }
 }

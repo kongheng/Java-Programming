@@ -2,10 +2,10 @@ package solid.dependency_inversion;
 
 public class CustomerBusinessLogic {
 
-  ICustomerDataAccess customerDataAccess;
+  CustomerDataAccess customerDataAccess;
 
   public CustomerBusinessLogic() {
-    customerDataAccess = DataAccessFactory.getInstanceOfCustomerDataAccess();
+    customerDataAccess = CustomerDataAccessFactory.getInstanceOfCustomerDataAccess();
   }
 
   public String getCustomerName(int id) {
