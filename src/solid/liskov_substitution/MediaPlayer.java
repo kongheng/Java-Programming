@@ -1,12 +1,8 @@
 package solid.liskov_substitution;
 
-public class MediaPlayer {
+public interface MediaPlayer {
 
-  public void playAudio() {
-    System.out.println("Playing audio");
-  }
+  void playAudio();
 
-  public void playVideo() {
-    System.out.println("Playing video");
-  }
+  void playVideo();
 }

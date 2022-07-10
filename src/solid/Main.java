@@ -41,11 +41,14 @@ public class Main {
     mediaPlayers.add(new KMPlayer());
     mediaPlayers.forEach(MediaPlayer::playVideo);
     VLCMediaPlayer vlcMediaPlayer = new VLCMediaPlayer();
-    MediaPlayer mediaPlayer = new MediaPlayer();
     KMPlayer kmPlayer = new KMPlayer();
     MXPlayer mxPlayer = new MXPlayer();
-    Player player = new Player(vlcMediaPlayer);
-    player.playVideo();
+    Player vlc = new Player(vlcMediaPlayer);
+    Player km = new Player(kmPlayer);
+    Player mx = new Player(mxPlayer);
+    vlc.playVideo();
+    km.playVideo();
+    mx.playAudio();
 
     //Interface-Segregation
     Asean asean = new Asean();
