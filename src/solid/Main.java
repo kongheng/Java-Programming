@@ -1,7 +1,7 @@
 package solid;
 
 import java.util.ArrayList;
-import solid.dependency_inversion.DataAccessFactory;
+import solid.dependency_inversion.CustomerDataAccessFactory;
 import solid.interface_segregation.Asean;
 import solid.interface_segregation.Eagle;
 import solid.liskov_substitution.KMPlayer;
@@ -41,11 +41,14 @@ public class Main {
     mediaPlayers.add(new KMPlayer());
     mediaPlayers.forEach(MediaPlayer::playVideo);
     VLCMediaPlayer vlcMediaPlayer = new VLCMediaPlayer();
-    MediaPlayer mediaPlayer = new MediaPlayer();
     KMPlayer kmPlayer = new KMPlayer();
     MXPlayer mxPlayer = new MXPlayer();
-    Player player = new Player(vlcMediaPlayer);
-    player.playVideo();
+    Player vlc = new Player(vlcMediaPlayer);
+    Player km = new Player(kmPlayer);
+    Player mx = new Player(mxPlayer);
+    vlc.playVideo();
+    km.playVideo();
+    mx.playAudio();
 
     //Interface-Segregation
     Asean asean = new Asean();
@@ -54,7 +57,7 @@ public class Main {
     eagle.sleep();
 
     //Dependency-Inversion
-    String customerName = DataAccessFactory.getInstanceOfCustomerDataAccess().getCustomerName(1);
+    String customerName = CustomerDataAccessFactory.getInstanceOfCustomerDataAccess().getCustomerName(1);
     System.out.println(customerName);
   }
 }
